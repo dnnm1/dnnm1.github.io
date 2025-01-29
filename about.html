@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--------------NAVIGATION-------------->
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo">
+         <ul>
+            <a href="index.html"><li>HOME</li></a>
+            <a href="about.html"><li>ABOUT</li></a>
+            <a href="completions.html"><li>COMPLETIONS</li></a>
+            <a href="creations.html"><li>CREATIONS</li></a>
+            <a href="contact.html"><li>CONTACT</li></a>
+         </ul>
+        </nav>
+    </div>
+<!--------------ABOUT CONTENT-------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user.png" alt="Profile Photo" class="profile-photo">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">ABOUT ME</h1>
+                <br>
+                <p>Hi! I'm Donna, an aspiring programming expert. I am currently undertaking Information & Communication Technology strand at St. Clare College of Caloocan, Philippines as a Grade 11 Student, part of the K-12 Program.</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">SKILLS</p>
+                    <p class="tab-links" onclick="opentab('interest')">INTEREST</p>
+                    <p class="tab-links" onclick="opentab('education')">EDUCATION</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>WEB DESIGNING</span><br>PLACEMENT: Beginner</li>
+                        <li><span>WEB DEVELOPMENT</span><br>PLACEMENT: Beginner</li>
+                        <li><span>GAME DEVELOPMENT</span><br>PLACEMENT: Beginner</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="interest">
+                    <ul>
+                        <li><span>TECHNOLOGY</span><br>Artificial Intelligence, Programming, Exploring and Learning Code Languages</li>
+                        <li><span>ACADEMICS</span><br>Public Speaking, Speech, Academic Performance and Interaction, Procrastination</li>
+                        <li><span>PERSONAL</span><br>Reading Books, Watching Novels, Music, Gaming, Gadgets, and Quite Outgoing</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>PRE-SCHOOL</span><br>Jhon David Christian Pre-School</li>
+                        <li><span>GRADE SCHOOL</span><br>Kalayaan Elementary School</li>
+                        <li><span>SECONDARY SCHOOL</span><br>Kalayaan National High School</li>
+                        <li><span>SENIOR HIGH SCHOOL</span><br>ST. CLARE COLLEGE - ICT Strand</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function opentab(tabname) {
+        var tablinks = document.getElementsByClassName('tab-links');
+        var tabcontents = document.getElementsByClassName('tab-contents');
+
+        for (let i = 0; i < tabcontents.length; i++) {
+            if (tabcontents[i].id === tabname) {
+                if (tabcontents[i].classList.contains('active-tab')) {
+                    tabcontents[i].classList.remove('active-tab');
+                } else {
+                    tabcontents[i].classList.add('active-tab');
+                }
+            } else {
+                tabcontents[i].classList.remove('active-tab');
+            }
+        }
+
+        for (let i = 0; i < tablinks.length; i++) {
+            if (tablinks[i].textContent.toUpperCase() === tabname.toUpperCase()) {
+                tablinks[i].classList.toggle('active-link');
+            } else {
+                tablinks[i].classList.remove('active-link');
+            }
+        }
+    }
+</script>
+
+<!--------------FOOTER-------------->
+<footer class="footer">
+    <div class="footer-container">
+        <p>Copyright &copy; DNDEV - dnnm |  All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
